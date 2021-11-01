@@ -1,0 +1,8 @@
+--- 
+-
+  name: "Create DB User & Pwd" 
+  hosts: localhost
+  vars: 
+    db_name: user
+    db_password: qwerty1
+    db_user: userver

@@ -1,0 +1,34 @@
+--- 
+- 
+  become: true
+  handlers: ~
+  hosts: localhost
+  tasks: 
+    - 
+      apt: 
+        cache_valid_time: 3600
+        update_cache: true
+      name: "apt-get update"
+    - 
+      apt: 
+        name: 
+          - nginx
+        state: latest
+      name: "install nginx"
+    - 
+      name: "start nginx"
+      service: 
+        name: nginx
+        state: started
+    - 
+      apt: 
+        name: 
+          - postgresql
+        state: latest
+      name: "Install PostgreSQL"
+    - 
+      name: "start PostgreSQL"
+      service: 
+        name:  postgresql
+        state: started
+
